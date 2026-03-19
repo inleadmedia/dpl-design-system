@@ -1,0 +1,60 @@
+.find-library-dialog {
+  display: flex;
+  flex-direction: column;
+  gap: $s-lg;
+}
+
+.find-library-dialog__title {
+  @include typography($typo__h3);
+}
+
+.find-library-dialog__location-list {
+  display: flex;
+  flex-direction: column;
+  gap: $s-sm;
+}
+
+.find-library-dialog__location-list__title {
+  @include typography($typo__lib-label);
+  color: $color__global-grey;
+}
+
+.find-library-dialog__location-list__item {
+  border: 1px solid $color__global-tertiary-1;
+  padding: $s-md;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  outline: none;
+  min-height: 92px;
+
+  &:focus,
+  &:hover {
+    outline: 1px solid $color__global-black;
+    outline-offset: -1px;
+    border-radius: 2px;
+  }
+
+  &--selected {
+    border: 2px solid $color__global-black;
+    outline-offset: -1px;
+    border-radius: 2px;
+  }
+}
+
+.find-library-dialog__location-list__item__name {
+  @include typography($typo__body-medium);
+  color: $color__text-primary-black;
+}
+
+.find-library-dialog__location-list__item__address {
+  @include typography($typo__small-caption);
+  color: $color__text-secondary-gray;
+}
+
+.find-library-dialog__location-list__item__distance {
+  @include typography($typo__body-medium);
+  color: $color__text-primary-black;
+  white-space: nowrap;
+}

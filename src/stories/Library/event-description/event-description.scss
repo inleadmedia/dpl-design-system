@@ -1,12 +1,6 @@
 .event-description {
-  @include layout-container;
-  @include block-spacing();
-  @include media-query__small {
-    @include layout-container($block-max-width__medium);
-    display: grid;
-    column-gap: $s-xl;
-    grid-template-columns: 2fr 1fr;
-  }
+  @include layout-container($layout__max-width--medium);
+  @include block-spacing("small");
 }
 
 .event-description__title {
@@ -19,15 +13,42 @@
   }
 }
 
+.event-description__info {
+  display: grid;
+  gap: $s-2xl;
+}
+
+.event-description__card,
+.list-description--relations {
+  @include media-query__small {
+    width: 50%;
+    min-width: $s-7xl;
+    place-self: end;
+  }
+}
+
 .event-description__description {
   @include typography($typo__subtitle);
-  margin-bottom: $s-md;
+  @include block-spacing("small");
+
+  @include media-query__medium {
+    margin-top: $_block-vertical-spacing--large;
+  }
 }
 
 .event-description__links {
-  margin-bottom: $s-2xl;
+  @include block-spacing("small");
+}
 
-  @include media-query__small {
-    margin-bottom: 0;
+.event-description__card {
+  background-color: $color__global-secondary;
+  padding: $s-lg;
+}
+
+.event-description__price {
+  @include typography($typo__h4);
+
+  .ticket-category {
+    text-align: end;
   }
 }

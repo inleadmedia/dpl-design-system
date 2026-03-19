@@ -1,41 +1,28 @@
-import { FC, ReactNode } from "react";
-import Hero from "../../Library/Heros/hero/Hero";
+import { FC } from "react";
 import EventDescription, {
   EventDescriptionProps,
 } from "../../Library/event-description/EventDescription";
 import { EventParagraphs } from "../../Library/paragraphs/Paragraphs";
+import {
+  Event as Hero,
+  EventArgs as HeroArgs,
+} from "../../Library/hero/Hero.stories";
 
-type EventPageProps = {
-  title: string;
-  date: string;
-  placeholderText?: string;
-  image?: ReactNode;
-} & EventDescriptionProps;
+type EventPageProps = EventDescriptionProps;
 
 const EventPage: FC<EventPageProps> = ({
-  title,
-  date,
-  placeholderText,
-  image,
-  descriptionDescription,
+  description,
   horizontalTermLineData,
-  listDescriptionData,
 }) => {
   return (
     <article className="event-page">
-      <Hero
-        title={title}
-        date={date}
-        image={image}
-        placeholderText={placeholderText}
-        cta="Køb billet"
-        tag="Arrangement"
-      />
+      <Hero {...HeroArgs} />
+
       <EventDescription
-        descriptionDescription={descriptionDescription}
+        description={description}
         horizontalTermLineData={horizontalTermLineData}
-        listDescriptionData={listDescriptionData}
       />
+
       <EventParagraphs />
     </article>
   );
