@@ -47,6 +47,7 @@ body {
   line-height: 1.5;
   background-color: $color__page-bg;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* A elements that don't have a class get default styles */
@@ -76,6 +77,7 @@ input[type="submit"],
 input[type="reset"] {
   padding: 0;
   border: inherit;
+  color: inherit; // Fix iOS Safari default blue button text
   background-color: inherit;
 }
 
