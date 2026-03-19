@@ -1,25 +1,24 @@
 .material-description {
-  padding: $s-md;
-  padding-top: $s-3xl;
-  padding-bottom: $s-2xl;
+  max-width: 750px;
+  padding: $hero-padding-small;
 
-  > h2.text-header-h4 {
-    font-size: 24px;
+  @include media-query__small {
+    padding: $hero-padding-large-content;
   }
+}
 
-  &__content {
-    max-width: 750px;
-    line-height: 160%;
-  }
+.material-description__heading {
+  @include typography($typo__h4);
+  margin-bottom: $s-md;
+}
 
-  @include media-query__medium {
-    padding-top: $s-4xl;
-    padding-left: $s-7xl;
-    padding-bottom: $s-5xl;
-  }
+.material-description__content {
+  @include typography($typo__body-large);
+  line-height: 160%;
+  margin-bottom: $s-md;
+}
 
-  // spacing between the description links
-  &__links > * + * {
-    margin-top: $s-md;
-  }
+// spacing between the description links
+.material-description__links > * + * {
+  margin-top: $s-md;
 }
